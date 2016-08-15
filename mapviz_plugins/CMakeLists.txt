@@ -121,6 +121,7 @@ qt5_wrap_cpp(SRC_FILES
 add_library(${PROJECT_NAME} ${SRC_FILES})
 target_link_libraries(${PROJECT_NAME} ${QT_LIBRARIES} ${QT_QTOPENGL_LIBRARIES} ${GLU_LIBRARY} ${GLUT_LIBRARY} ${OpenCV_LIBRARIES} ${catkin_LIBRARIES})
 add_dependencies(${PROJECT_NAME} marti_visualization_msgs_generate_messages_cpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "-std=c++11 -D__STDC_FORMAT_MACROS")
 
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
